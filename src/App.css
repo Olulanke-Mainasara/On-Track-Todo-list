@@ -1,38 +1,217 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 30px 0;
+  gap: 40px;
+}
+
+.App h1 {
+  font-weight: 400;
+}
+
+.actions, .update {
+  padding: 30px;
+  display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.actions input, .todoItem input, .update input {
+  width: 500px;
+  height: 50px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+  outline: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todoItem input {
+  width: 350px;
+  border-bottom: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.update input {
+  width: 200px;
+}
+
+.actions button, .update button {
+  height: 50px;
+  padding: 0 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.itemHolder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  overflow-y: scroll;
+}
+
+.todoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  font-size: 12px;
+  background-color: #262626;
+  border-radius: 20px;
+}
+
+.actionBtns {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.actionBtns i {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.5s;
+}
+
+.actionBtns i:hover {
+  opacity: 1;
+}
+
+.fa-xmark, .fa-rotate-left {
+  display: none;
+}
+
+.done input {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.done .fa-rotate-left {
+  display: block;
+}
+
+.done .fa-check {
+  display: none;
+}
+
+.update {
+  display: none;
+  box-shadow: none;
+}
+
+.inUpdate {
+  display: flex;
+}
+
+.inUpdate .fa-pen-to-square {
+  display: none;
+}
+
+.inUpdate .fa-xmark {
+  display: block;
+}
+
+.inUpdate .fa-rotate-left {
+  display: none;
+}
+
+.inUpdate .fa-check {
+  display: none;
+}
+
+@media screen and (min-width: 451px) and (max-width: 750px) {
+  .actions input {
+    width: 50vw;
+    font-size: 18px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .todoItem input {
+    width: 40vw;
+    font-size: 18px;
   }
+}
+
+@media screen and (max-width: 450px){
+  .actions input {
+    width: 200px;
+    font-size: 18px;
+  }
+
+  .actions button {
+    font-size: 18px;
+  }
+
+  .todoItem input {
+    width: 180px;
+    font-size: 16px;
+  }
+
+  .update input {
+    width: 150px;
+    font-size: 16px;
+  }
+
+  .update button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .actions input {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .actions {
+    padding: 20px;
+  }
+  
+  .actions input {
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .actions button {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .todoItem input {
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .actionBtns i {
+    font-size: 14px;
+  }
+  
+    .update input {
+      width: 100px;
+      font-size: 14px;
+    }
+  
+    .update button {
+      font-size: 14px;
+    }
 }
