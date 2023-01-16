@@ -1,8 +1,11 @@
-import React from 'react'
-import Todoitem from "./todoItem"
-import "./App.css"
+import React, { useContext } from "react";
+import { TodoContext } from "../Providers/TodoContext";
+import Todoitem from "./TodoItem";
+import "../Styles/App.css";
 
-function Itemholder({todos, changeStatus, deleteTodo, updateTodo, revertStatus,}) {
+function Itemholder({ changeStatus, deleteTodo, updateTodo, revertStatus }) {
+  const [todos] = useContext(TodoContext);
+
   return (
     <div className="itemHolder">
       {todos.map((todo) => (
@@ -22,4 +25,4 @@ function Itemholder({todos, changeStatus, deleteTodo, updateTodo, revertStatus,}
   );
 }
 
-export default Itemholder
+export default Itemholder;
