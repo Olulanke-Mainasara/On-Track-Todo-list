@@ -21,15 +21,15 @@
   display: flex;
   gap: 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border: 1px solid white;
   border-radius: 20px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.actions input, .todoItem input, .update input {
+.actions input, .todoItem .todoText, .update input {
   width: 500px;
-  height: 50px;
+  height: 100%;
   background: none;
   border: none;
   border-bottom: 1px solid gray;
@@ -38,9 +38,12 @@
   color: white;
 }
 
-.todoItem input {
+.todoItem .todoText {
   width: 350px;
-  border-bottom: none;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  border: none;
 }
 
 .update input {
@@ -61,7 +64,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   overflow-y: scroll;
 }
 
@@ -100,7 +103,7 @@
   display: none;
 }
 
-.done input {
+.done .todoText {
   text-decoration: line-through;
   opacity: 0.4;
 }
@@ -144,29 +147,34 @@
     font-size: 18px;
   }
 
-  .todoItem input {
+  .todoItem .todoText {
     width: 40vw;
     font-size: 18px;
   }
 }
 
 @media screen and (max-width: 450px){
-  .actions, .update {
-      padding: 20px;
+  .actions, .update, .todoItem {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .update {
+    width: 80%;
   }
 
   .actions input, .update input {
-    width: 200px;
+    width: 70%;
     font-size: 18px;
+  }
+
+  .update input {
+    width: 60%;
   }
 
   .actions button, .update button {
     padding: 15px;
     font-size: 18px;
-  }
-
-  .todoItem input {
-    width: 180px;
   }
 
   .actionBtns i {
@@ -176,35 +184,40 @@
 
 @media screen and (max-width: 320px) {
   .actions {
-    padding: 20px;
+    width: 93%;
+    padding: 15px;
   }
-  
+
   .actions input {
-    width: 120px;
-    font-size: 14px;
+    width: 65%;
+    font-size: 16px;
   }
 
-  .actions button {
-    height: 40px;
-    padding: 0 10px;
-    font-size: 14px;
+  .update {
+    width: 85%;
+    padding: 15px;
   }
 
-  .todoItem input {
-    width: 120px;
-    font-size: 14px;
+  .update input {
+    width: 55%;
+    font-size: 16px;
+  }
+
+  .todoItem {
+    padding: 20px 15px;
+  }
+
+  .todoItem .todoText {
+    font-size: 16px;
   }
 
   .actionBtns i {
     font-size: 14px;
   }
-  
-    .update input {
-      width: 100px;
+
+  .actions button, .update button {
+      height: 40px;
+      padding: 0 10px;
       font-size: 14px;
-    }
-  
-    .update button {
-      font-size: 14px;
-    }
+  }
 }

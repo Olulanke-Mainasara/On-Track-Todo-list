@@ -49,7 +49,9 @@ function Todoitem(props) {
   return (
     <>
       <div className={`todoItem ${status ? "done" : ""} ${inUpdateMode ? "inUpdate" : ""}`}>
-          <input type="text" ref={initialName} disabled={true} defaultValue={props.name}/>
+          <div className='todoText' ref={initialName} defaultValue={props.name}>
+            <p>{props.name}</p>
+          </div>
 
           <div className="actionBtns">
             <i title="Close edit panel" onClick={enableUpdate} className="fa-solid fa-xmark"></i>
